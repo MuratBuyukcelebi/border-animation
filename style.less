@@ -1,0 +1,61 @@
+body {
+  --bodybgc: #111111;
+  background: var(--bodybgc);
+  padding-top: 220px;
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  width: 440px;
+  height: 490px;
+  border: double 4px transparent;
+  border-radius: 32px;
+  background: #111111;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  --dene: 0deg;
+  animation: 5s angleblcok linear infinite;
+  background-image: linear-gradient(var(--bodybgc), var(--bodybgc)), linear-gradient(var(--dene), #3C1960 0%,  #A12669 50.92%, #FEC261 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  &-text {
+    --text: 360deg;
+    color: #fff;
+    animation: 5s angletext linear infinite;
+    background-image: -webkit-linear-gradient(var(--text), #3C1960 0%,  #A12669 50.92%, #FEC261 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+@keyframes angleblcok {
+  to {
+    --dene: 360deg;
+  }
+}
+
+@keyframes angletext {
+  to {
+    --text: 0deg;
+  }
+}
+
+@property --dene {
+  syntax: '<angle>';
+  initial-value: 360deg;
+  inherits: false;
+}
+
+@property --text {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
